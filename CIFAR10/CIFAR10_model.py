@@ -10,6 +10,8 @@ from torch.optim import Adam
 from torch.optim.lr_scheduler import StepLR
 from torch.utils.data import DataLoader, random_split
 
+# 如果有gpu 
+evice = torch.device("cuda" if torch.backends.mps.is_available() else "cpu")
 # 检查是否支持 MPS 加速
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 print(f"Using device: {device}")
@@ -83,7 +85,7 @@ writer = SummaryWriter("Log/loss_log_ReLU")
 start_time = time.time()
 
 # 训练模型
-epochs = 1
+epochs = 100
 for epoch in range(epochs):
     model.train()  # 切换到训练模式
     running_loss = 0.0

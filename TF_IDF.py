@@ -1,7 +1,6 @@
 from collections import defaultdict
 import math
 
-
 def load_datasets():
     dataset = [['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'],  # 切分的词条
                ['maybe', 'not', 'take', 'him', 'to', 'dog', 'park', 'stupid'],
@@ -50,3 +49,4 @@ def feature_select(list_words):
 
 if __name__ == "__main__":
     feature_select(load_datasets())
+
